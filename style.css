@@ -3,8 +3,15 @@ body {
 }
 
 .content {
+  background: transparent;
+  height: 100%;
   width: 90%;
   margin: 0 auto;
+  top: 0;
+  left: 5%;
+  position: absolute;
+  display:table;
+  pointer-events: none;
 }
 
 .canvas-container {
@@ -16,4 +23,20 @@ body {
   float: right;
   display: block;
   position: relative;
+}
+
+.content-hello {
+  display: table;
+  height: 100%;
+}
+
+.hello {
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  top: -50%;
+  font-size: 115px;
+  line-height: 130px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
