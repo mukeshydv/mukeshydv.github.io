@@ -10,19 +10,23 @@ body {
   top: 0;
   left: 5%;
   position: absolute;
-  display:table;
   pointer-events: none;
 }
 
 .canvas-container {
+  display:table;
   width: 100% !important;
   height: 100% !important;
+  opacity: 0.5;
+}
+
+.lightcanvas {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #canvas-1 {
   float: right;
-  display: block;
-  position: relative;
 }
 
 .content-hello {
@@ -34,9 +38,4 @@ body {
   display: table-cell;
   vertical-align: middle;
   color: white;
-  top: -50%;
-  font-size: 115px;
-  line-height: 130px;
-  font-weight: 700;
-  letter-spacing: 2px;
 }
