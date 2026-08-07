@@ -1,119 +1,723 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mukesh Yadav | Staff Engineer @ Mindtickle & Mobile Architect</title>
+  <meta name="description" content="Portfolio of Mukesh Yadav - Staff Engineer at Mindtickle with 10+ years experience specializing in iOS (Swift, SwiftUI, RxSwift), Kotlin Multiplatform (KMM), Go, and High-Performance Mobile Systems.">
+  <meta name="author" content="Mukesh Yadav">
+  <meta name="keywords" content="Mukesh Yadav, Staff Engineer, Mindtickle, iOS Engineer, Kotlin Multiplatform, KMM, Swift, SwiftUI, RxSwift, Mobile Architect, Golang">
 
-<!--- basic page needs
-	================================================== -->
-	<meta charset="utf-8">
-	<title>Mukesh Yadav</title>
-	<meta name="description" content="Mukesh Yadav: Software Engineer">  
-	<meta name="author" content="Mukesh Yadav">
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Mukesh Yadav | Staff Engineer @ Mindtickle & Mobile Architect">
+  <meta property="og:description" content="10+ Years Experience in iOS Development, Kotlin Multiplatform (KMM), and High-Scale Mobile Architecture.">
+  <meta property="og:type" content="website">
 
-   <!-- mobile specific metas
-   	================================================== -->
-   	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 
- 	<!-- CSS
- 		================================================== -->
- 		<link rel="stylesheet" href="css/base.css">  
- 		<link rel="stylesheet" href="css/main.css">
- 		<link rel="stylesheet" href="css/vendor.css">     
+  <!-- Font Awesome 6 CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-   <!-- script
-   	================================================== -->   
-   	<script src="js/modernizr.js"></script>
-   	<script src="js/pace.min.js"></script>
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
 
-   <!-- favicons
-   	================================================== -->
-   	<link rel="icon" type="image/png" href="favicon.png">
+  <!-- Interactive Particle Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
 
-   	<!-- Latest compiled and minified CSS -->
-   	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
+  <!-- Sticky Glassmorphism Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#top" class="logo">
+        MUKESH<span class="logo-dot"></span>
+      </a>
 
-   	<!-- jQuery library -->
-   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
 
-   	<!-- Popper JS -->
-   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>Staff Engineer @ Mindtickle</span>
+        </div>
 
-   	<!-- Latest compiled JavaScript -->
-   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-   	<script src="https://threejs.org/build/three.min.js"></script>
-   	<script src="https://threejs.org/examples/js/libs/stats.min.js"> </script>
-   	<link href="style.css" rel="stylesheet" type="text/css">
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-   	<meta name="google-site-verification" content="ABOOveF2b7aUjEVGfD3HErqcwSWHjPSDZjBBA5CRfSg"/>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-tag">
+            <i class="fa-solid fa-award"></i>
+            <span>Staff Engineer • 10+ Years Experience</span>
+          </div>
 
-   </head>
-   <body id="top">
+          <h1 class="hero-title">
+            Architecting High-Scale <span class="gradient-text">iOS & KMM Ecosystems</span>
+          </h1>
 
-	<!-- header 
-		================================================== -->
-		<header>   	
-			<div class="row">
+          <div class="hero-subtitle">
+            I'm Mukesh Yadav, <span id="typewriter-text" style="color: var(--accent-cyan); font-weight: 700; margin-left: 0.5rem;"></span>
+            <span class="typewriter-cursor"></span>
+          </div>
 
-				<div class="top-bar">
-					<a class="menu-toggle" href="#"><span>Menu</span></a>
+          <p class="hero-description">
+            Staff Engineer at <strong>Mindtickle</strong> with over 10+ years of extensive experience in iOS development, Kotlin Multiplatform (KMM), RxSwift, Combine, Golang backend services, and Datadog distributed telemetry.
+          </p>
 
-					<div class="logo">
-						<a href="index.html">HOME</a>
-					</div>	
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>View App Showcase</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Get In Touch</span>
+            </a>
+            <button onclick="openModal('resume-modal')" class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full);">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>Resume Details</span>
+            </button>
+          </div>
 
-					<nav id="main-nav-wrap">
-						<ul class="main-navigation">
-							<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>			
-						</ul>
-					</nav>    		
-				</div> <!-- /top-bar --> 
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="10" data-suffix="+">10+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="6" data-suffix="+">6+</span>
+              <span class="stat-label">Production Apps</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="1" data-suffix="M+">1M+</span>
+              <span class="stat-label">App Store Installs</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="99" data-suffix=".9%">99.9%</span>
+              <span class="stat-label">Crash-Free Rate</span>
+            </div>
+          </div>
+        </div>
 
-			</div> <!-- /row --> 		
-		</header> <!-- /header -->
+        <div class="hero-avatar-container">
+          <div class="avatar-wrapper">
+            <img src="images/profile-pic.PNG" alt="Mukesh Yadav" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+          </div>
 
-	<!-- intro section
-		================================================== -->
-		<section id="intro">   
+          <div class="floating-badge badge-1">
+            <i class="fa-brands fa-apple" style="color: var(--accent-cyan); font-size: 1.2rem;"></i>
+            <span>iOS & Swift Lead</span>
+          </div>
 
-			<div class="intro-overlay"></div>
-			<div id="canvas-container-1" class="canvas-container">
-				<div class="lightcanvas"><canvas id="canvas-1"></canvas></div>>
-			</div>
-			<div class="intro-content">
-				<div class="row">
+          <div class="floating-badge badge-2">
+            <i class="fa-solid fa-cubes" style="color: var(--accent-emerald); font-size: 1.2rem;"></i>
+            <span>KMM Multiplatform</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-					<div class="col-twelve">
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Engineering Spotlight</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
 
-						<h5>Hello, World.</h5>
-						<h1>I'm Mukesh Yadav.</h1>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-primary);">
+            Staff Engineer & Mobile Systems Architect
+          </h3>
 
-						<p class="intro-position">
-							<span>Software Engineer</span>
-							<span>iOS/Android Developer</span> 
-						</p>
+          <p>
+            I am <strong>Mukesh Yadav</strong>, a Staff Engineer currently leading mobile architecture and SDK development at <strong>Mindtickle</strong> in Pune, India. With 10+ years of dedicated experience in the mobile industry, I specialize in native iOS engineering (Swift, SwiftUI, UIKit, RxSwift, Combine), Kotlin Multiplatform (KMM), Golang microservices, and distributed observability.
+          </p>
+          <p>
+            My engineering philosophy centers around Clean Architecture, robust data security (PHI/PII & FHIR compliance), automated CI/CD pipelines (GitHub Actions/GitLab CI), and custom distributed tracing using Datadog and OpenTelemetry to track and optimize UI page load performance relative to backend API latency.
+          </p>
 
-						<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+          <div class="about-tags">
+            <div class="tech-chip"><i class="fa-brands fa-swift"></i> Swift & SwiftUI</div>
+            <div class="tech-chip"><i class="fa-solid fa-cubes"></i> Kotlin Multiplatform (KMM)</div>
+            <div class="tech-chip"><i class="fa-solid fa-bolt"></i> RxSwift & RxCocoa</div>
+            <div class="tech-chip"><i class="fa-brands fa-golang"></i> Golang & Microservices</div>
+            <div class="tech-chip"><i class="fa-solid fa-chart-line"></i> Datadog & OpenTelemetry</div>
+            <div class="tech-chip"><i class="fa-solid fa-shield-halved"></i> PHI/PII & FHIR Compliance</div>
+          </div>
+        </div>
 
-					</div>  
+        <div class="code-widget">
+          <div class="code-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
 
-				</div>   		 		
-			</div> <!-- /intro-content --> 
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="code-tab-btn" data-file="developer.json" style="background:none; border:none; color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.75rem; cursor:pointer; opacity:1;">developer.json</button>
+              <button class="code-tab-btn" data-file="architecture.ts" style="background:none; border:none; color:var(--text-muted); font-family:var(--font-mono); font-size:0.75rem; cursor:pointer; opacity:0.6;">architecture.ts</button>
+              <button class="code-tab-btn" data-file="interests.config" style="background:none; border:none; color:var(--text-muted); font-family:var(--font-mono); font-size:0.75rem; cursor:pointer; opacity:0.6;">interests.config</button>
+            </div>
+          </div>
 
-			<ul class="intro-social">
-				<li><a href="https://github.com/mukeshydv" target="blank"><i class="fa fa-github"></i></a></li>
-				<li><a href="https://stackoverflow.com/users/7568116/mukesh?tab=profile" target="blank"><i class="fa fa-stack-overflow"></i></a></li>
-				<li><a href="https://www.instagram.com/1.0.0.101/" target="blank"><i class="fa fa-instagram"></i></a></li>
-			</ul> <!-- /intro-social -->      	
+          <pre class="code-content"><code id="code-snippet-content">{
+  <span class="syn-prop">"name"</span>: <span class="syn-string">"Mukesh Yadav"</span>,
+  <span class="syn-prop">"role"</span>: <span class="syn-string">"Staff Engineer @ Mindtickle"</span>,
+  <span class="syn-prop">"location"</span>: <span class="syn-string">"Pune, Maharashtra, India"</span>,
+  <span class="syn-prop">"experience"</span>: <span class="syn-string">"10+ Years in iOS & Mobile Architecture"</span>,
+  <span class="syn-prop">"coreTech"</span>: [<span class="syn-string">"Swift"</span>, <span class="syn-string">"Kotlin / KMM"</span>, <span class="syn-string">"Go"</span>, <span class="syn-string">"SwiftUI"</span>, <span class="syn-string">"RxSwift"</span>, <span class="syn-string">"GraphQL"</span>],
+  <span class="syn-prop">"currentFocus"</span>: <span class="syn-string">"Leading KMM SDKs, Distributed Tracing & High Scale Architecture"</span>
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		</section> <!-- /intro -->  
+  <!-- Skills Matrix -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Core Technical Skills</span>
+        <h2 class="section-title">Technical Expertise</h2>
+      </div>
 
-   	<div id="preloader"> 
-   		<div id="loader"></div>
-   	</div> 
+      <div class="skills-tabs">
+        <button class="tab-btn active" data-tab="all">All Stack</button>
+        <button class="tab-btn" data-tab="mobile">iOS & KMM</button>
+        <button class="tab-btn" data-tab="backend">Backend & APIs</button>
+        <button class="tab-btn" data-tab="devops">DevOps & Observability</button>
+      </div>
 
-   <!-- Java Script
-   	================================================== --> 
-   	<script src="js/jquery-2.1.3.min.js"></script>
-   	<script src="js/plugins.js"></script>
-   	<script src="js/main.js"></script>
-   	<script src="bg_script.js"> </script>
-   </body>
-   </html>
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="glass-card skill-card" data-category="mobile">
+          <div class="skill-icon-header">
+            <div class="skill-icon">
+              <i class="fa-brands fa-apple"></i>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan);">98%</span>
+          </div>
+          <h3 class="skill-title">iOS Frameworks & Architecture</h3>
+          <p class="skill-desc">Swift, Objective-C, SwiftUI, UIKit, Storyboards/AutoLayout, RxSwift, RxCocoa, Combine, Clean Architecture, MVC & MVVM patterns.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 98%;"></div>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="glass-card skill-card" data-category="mobile">
+          <div class="skill-icon-header">
+            <div class="skill-icon" style="color: var(--accent-emerald);">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-emerald);">94%</span>
+          </div>
+          <h3 class="skill-title">Kotlin Multiplatform (KMM / KMP)</h3>
+          <p class="skill-desc">Kotlin, KMM framework creation, shared logic between iOS & Android, Kotlin Flows, Coroutines, Realm & Cross-platform SDKs.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 94%; background: linear-gradient(135deg, #10b981, #059669);"></div>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="glass-card skill-card" data-category="backend">
+          <div class="skill-icon-header">
+            <div class="skill-icon" style="color: var(--accent-purple);">
+              <i class="fa-brands fa-golang"></i>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-purple);">90%</span>
+          </div>
+          <h3 class="skill-title">Backend & Microservices</h3>
+          <p class="skill-desc">Golang (Gin framework), Java Play Framework, MySQL, RabbitMQ, Redis, GraphQL, gRPC, URLSession, Socket networking.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 90%; background: linear-gradient(135deg, #a855f7, #9333ea);"></div>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="glass-card skill-card" data-category="devops">
+          <div class="skill-icon-header">
+            <div class="skill-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan);">92%</span>
+          </div>
+          <h3 class="skill-title">Observability & Monitoring</h3>
+          <p class="skill-desc">Datadog, OpenTelemetry, custom distributed tracing to correlate UI page load times with backend API response latency.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 92%;"></div>
+          </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="glass-card skill-card" data-category="devops">
+          <div class="skill-icon-header">
+            <div class="skill-icon" style="color: var(--accent-emerald);">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-emerald);">95%</span>
+          </div>
+          <h3 class="skill-title">Data Security & Compliance</h3>
+          <p class="skill-desc">PHI and PII healthcare data security, FHIR standard API integrations, Bluetooth Low Energy (BLE) medical device pairing.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 95%; background: linear-gradient(135deg, #10b981, #059669);"></div>
+          </div>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="glass-card skill-card" data-category="devops">
+          <div class="skill-icon-header">
+            <div class="skill-icon" style="color: var(--accent-purple);">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-purple);">92%</span>
+          </div>
+          <h3 class="skill-title">CI/CD & Automation</h3>
+          <p class="skill-desc">GitHub Actions, GitLab CI, automated build deployment pipelines, KMM framework compilation, Firebase analytics & crash reporting.</p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 92%; background: linear-gradient(135deg, #a855f7, #9333ea);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Career Path</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- Timeline item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <span class="timeline-date">JULY 2021 — PRESENT</span>
+            <h3 class="timeline-role">Staff Engineer (formerly SDE-III)</h3>
+            <div class="timeline-company">Mindtickle, Pune, Maharashtra</div>
+            <ul class="timeline-bullets">
+              <li>Owned end-to-end requirement gathering, architectural design, and development of the flagship Mindtickle iOS application.</li>
+              <li>Spearheaded the Kotlin Multiplatform (KMM / KMP) SDK initiative, enabling shared business logic between iOS and Android.</li>
+              <li>Implemented custom Datadog and OpenTelemetry distributed tracing to track UI page load performance against API call latencies.</li>
+              <li>Implemented and optimized mobile-specific backend APIs using Java Play framework and Go.</li>
+              <li>Hired, onboarded, and trained new engineering talents while driving best practices across team members.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <span class="timeline-date">NOV 2019 — JULY 2021</span>
+            <h3 class="timeline-role">Senior Software Engineer</h3>
+            <div class="timeline-company">DayToDay Health, Bangalore</div>
+            <ul class="timeline-bullets">
+              <li>Led design and development of the DayToDay Health iOS application for remote patient care monitoring.</li>
+              <li>Enforced strict data security standards for handling sensitive patient PHI and PII data, integrating FHIR standard APIs.</li>
+              <li>Integrated Bluetooth Low Energy (BLE) medical devices, Core Data, RxSwift, and Firebase dynamic links.</li>
+              <li>Recruited, onboarded, and mentored new engineering team members.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <span class="timeline-date">APRIL 2018 — NOV 2019</span>
+            <h3 class="timeline-role">Senior Software Engineer</h3>
+            <div class="timeline-company">Chefling Inc, Bangalore</div>
+            <ul class="timeline-bullets">
+              <li>Engineered the Chefling Everyday Recipes iOS application from scratch in Swift using Clean Architecture and published to App Store.</li>
+              <li>Architected and managed backend services in Golang using Gin, MySQL, RabbitMQ, and Redis.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <span class="timeline-date">JAN 2016 — APRIL 2018</span>
+            <h3 class="timeline-role">Software Engineer</h3>
+            <div class="timeline-company">InnovationM Mobile Technologies, Noida</div>
+            <ul class="timeline-bullets">
+              <li>Developed Objective-C native modules and spearheaded full app revamps in Swift 3.2 using Clean Architecture from scratch.</li>
+              <li>Shipped production applications including OneAssist, LoveVivah, and WaterApp.</li>
+              <li>Authored technical articles and blogs on iOS development for InnovationM.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Showcase -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Shipped Production Applications</span>
+        <h2 class="section-title">App Store Projects</h2>
+      </div>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ios">iOS & KMM Apps</button>
+        <button class="filter-btn" data-filter="backend">Backend & Services</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="glass-card project-card" data-category="ios">
+          <div class="project-img-wrapper">
+            <img src="images/portfolio/lighthouse.jpg" alt="Mindtickle App" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1510519138161-584462973167?auto=format&fit=crop&w=600&q=80'">
+            <div class="project-overlay">
+              <button onclick="showProjectDetails('mindtickle')" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+              <a href="https://apps.apple.com/in/app/mindtickle/id965785490" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-category">iOS App & KMM SDK</span>
+              <h3 class="project-title">Mindtickle</h3>
+              <p class="project-desc">Flagship iOS enterprise application featuring Kotlin Multiplatform (KMM) shared SDK, Datadog distributed tracing, SwiftUI, and Realm DB.</p>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">KMM</span>
+              <span class="tech-tag">SwiftUI</span>
+              <span class="tech-tag">Datadog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card project-card" data-category="ios">
+          <div class="project-img-wrapper">
+            <img src="images/portfolio/liberty.jpg" alt="DayToDay Health" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80'">
+            <div class="project-overlay">
+              <button onclick="showProjectDetails('daytoday')" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+              <a href="https://apps.apple.com/us/app/daytoday-health/id1464676783" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-category">Healthcare & PHI/PII</span>
+              <h3 class="project-title">DayToDay Health</h3>
+              <p class="project-desc">Remote patient care monitoring iOS app handling sensitive PHI/PII data, FHIR APIs, Bluetooth medical device pairing, and Core Data.</p>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">BLE Devices</span>
+              <span class="tech-tag">FHIR APIs</span>
+              <span class="tech-tag">Core Data</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card project-card" data-category="backend">
+          <div class="project-img-wrapper">
+            <img src="images/portfolio/clouds.jpg" alt="Chefling Recipe App" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=600&q=80'">
+            <div class="project-overlay">
+              <button onclick="showProjectDetails('chefling')" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+              <a href="https://itunes.apple.com/in/app/chefling-everyday-recipes/id1047523390?mt=8" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-category">iOS App & Golang Backend</span>
+              <h3 class="project-title">Chefling Everyday Recipes</h3>
+              <p class="project-desc">Full iOS application built in Swift with Clean Architecture, paired with Golang microservices (Gin, MySQL, RabbitMQ, Redis).</p>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">Golang</span>
+              <span class="tech-tag">Gin</span>
+              <span class="tech-tag">RabbitMQ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-card project-card" data-category="ios">
+          <div class="project-img-wrapper">
+            <img src="images/portfolio/beetle.jpg" alt="OneAssist App" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80'">
+            <div class="project-overlay">
+              <button onclick="showProjectDetails('oneassist')" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+              <a href="https://itunes.apple.com/in/app/one-assist-for-iphone/id1074619069?mt=8" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-category">iOS Protection Services</span>
+              <h3 class="project-title">OneAssist iOS</h3>
+              <p class="project-desc">Mobile protection iOS application with payment gateway integration, Core Data persistence, push notifications, and Objective-C to Swift migration.</p>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">Objective-C</span>
+              <span class="tech-tag">Payments</span>
+              <span class="tech-tag">Core Data</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="glass-card project-card" data-category="ios">
+          <div class="project-img-wrapper">
+            <img src="images/portfolio/shutterbug.jpg" alt="LoveVivah App" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80'">
+            <div class="project-overlay">
+              <button onclick="showProjectDetails('lovevivah')" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+              <a href="https://itunes.apple.com/us/app/lovevivah/id1239412737?mt=8" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-category">Social & Matchmaking</span>
+              <h3 class="project-title">LoveVivah</h3>
+              <p class="project-desc">iOS matchmaking application built with Swift, featuring In-App Purchase (IAP) integration, custom UI animations, and push notifications.</p>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">In-App Purchase</span>
+              <span class="tech-tag">UIKit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="glass-card project-card" data-category="ios">
+          <div class="project-img-wrapper">
+            <img src="images/portfolio/salad.jpg" alt="WaterApp Hydration Tracker" class="project-img" onerror="this.src='https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=600&q=80'">
+            <div class="project-overlay">
+              <button onclick="showProjectDetails('waterapp')" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-circle-info"></i> Details
+              </button>
+              <a href="https://itunes.apple.com/us/app/water-app-reminder-tracker/id1199779472" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> App Store
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div>
+              <span class="project-category">Utility & Hydration</span>
+              <h3 class="project-title">WaterApp Hydration Tracker</h3>
+              <p class="project-desc">Daily hydration reminder and tracking iOS app featuring local notifications, custom UI animations, Core Data, and AdMob integration.</p>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">Core Data</span>
+              <span class="tech-tag">Local Notifications</span>
+              <span class="tech-tag">AdMob</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Connect Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="glass-card contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div class="contact-label">Email Direct</div>
+              <a href="mailto:mails4ymukesh@gmail.com" class="contact-value">mails4ymukesh@gmail.com</a>
+              <button id="copy-email-btn" style="margin-left: 0.5rem; background: none; border: none; color: var(--accent-cyan); cursor: pointer; font-size: 0.85rem;" title="Copy to clipboard">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="glass-card contact-card">
+            <div class="contact-icon" style="color: var(--accent-emerald);">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div>
+              <div class="contact-label">GitHub Profile</div>
+              <a href="https://github.com/mukeshydv" target="_blank" class="contact-value">github.com/mukeshydv</a>
+            </div>
+          </div>
+
+          <div class="glass-card contact-card">
+            <div class="contact-icon" style="color: var(--accent-purple);">
+              <i class="fa-brands fa-stack-overflow"></i>
+            </div>
+            <div>
+              <div class="contact-label">Stack Overflow</div>
+              <a href="https://stackoverflow.com/users/7568116/mukesh" target="_blank" class="contact-value">mukesh (7568116)</a>
+            </div>
+          </div>
+
+          <div class="glass-card contact-card">
+            <div class="contact-icon" style="color: var(--accent-rose);">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <div class="contact-label">Location</div>
+              <span class="contact-value">Baner Road, Pune, Maharashtra 411008</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="contact-form" class="glass-card contact-form">
+          <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">Send Me a Message</h3>
+
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" class="form-input" placeholder="e.g. Alex Rivera" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" id="email" class="form-input" placeholder="e.g. alex@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" class="form-input" placeholder="Technical Advisory / Project Collaboration" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-textarea" placeholder="Tell me about your project or inquiry..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div style="font-size: 0.9rem; color: var(--text-muted);">
+        © <span id="year">2026</span> <strong>Mukesh Yadav</strong>. All Rights Reserved. Staff Engineer @ Mindtickle.
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/mukeshydv" target="_blank" class="social-icon-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://stackoverflow.com/users/7568116/mukesh" target="_blank" class="social-icon-btn" title="StackOverflow"><i class="fa-brands fa-stack-overflow"></i></a>
+        <a href="https://www.instagram.com/1.0.0.101/" target="_blank" class="social-icon-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#top" class="social-icon-btn" title="Scroll to Top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Alert -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald); font-size: 1.25rem;"></i>
+    <div>
+      <strong style="display: block; font-size: 0.9rem;">Message Received!</strong>
+      <span style="font-size: 0.8rem; color: var(--text-secondary);">Thank you for reaching out. I will respond shortly.</span>
+    </div>
+  </div>
+
+  <!-- Resume Overview Modal -->
+  <div id="resume-modal" class="modal-backdrop">
+    <div class="glass-card modal-content">
+      <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+
+      <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.4rem;" class="gradient-text">Mukesh Yadav</h2>
+      <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; margin-bottom: 1.5rem;">Staff Engineer @ Mindtickle | 10+ Years Experience</div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem; color: var(--text-secondary); line-height: 1.6;">
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.1rem;">Profile Summary</h4>
+          <p>10+ Years of extensive experience in iOS Development, Kotlin Multiplatform (KMM), Clean Architecture, RxSwift, SwiftUI, and SDK development. Expert in high-performance mobile architectures, backend services in Golang, and Datadog distributed tracing.</p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.1rem;">Work Experience</h4>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 0.5rem;"><strong>Mindtickle</strong> — Staff Engineer / SDE-III (July 2021 — Present)</li>
+            <li style="margin-bottom: 0.5rem;"><strong>DayToDay Health</strong> — Senior Software Engineer (Nov 2019 — July 2021)</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Chefling Inc</strong> — Senior Software Engineer (April 2018 — Nov 2019)</li>
+            <li style="margin-bottom: 0.5rem;"><strong>InnovationM Mobile Technologies</strong> — Software Engineer (Jan 2016 — April 2018)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.1rem;">Education</h4>
+          <p><strong>APJ Abdul Kalam University, Lucknow</strong> — B.Tech (2012 — 2016)</p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.1rem;">Contact Details</h4>
+          <p>Email: <a href="mailto:mails4ymukesh@gmail.com" style="color: var(--accent-cyan);">mails4ymukesh@gmail.com</a> | Location: Baner Road, Pune, Maharashtra 411008</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Details Modal -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="glass-card modal-content">
+      <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+      <h2 id="project-modal-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--text-primary);">Project Title</h2>
+      <div id="project-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Libraries & App Engine -->
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
